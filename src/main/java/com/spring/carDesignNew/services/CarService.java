@@ -3,8 +3,10 @@ package com.spring.carDesignNew.services;
 public interface CarService {
 	
 	String closeCar();
-	String hi();
+	String start();
 	String startCar();
-	//String openDoor(int doorNumber);
+	String openDoor(int doornumber);
+	String closeDoor(int doornumber);
+
 
 }
