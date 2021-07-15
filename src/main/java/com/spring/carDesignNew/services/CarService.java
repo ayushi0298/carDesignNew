@@ -1,12 +1,10 @@
 package com.spring.carDesignNew.services;
 
+import com.spring.carDesignNew.entities.Car;
+import com.spring.carDesignNew.model.CarRequest;
+
+import java.util.ArrayList;
+
 public interface CarService {
-	
-	String closeCar();
-	String start();
-	String startCar();
-	String openDoor(int doornumber);
-	String closeDoor(int doornumber);
-
-
+    public String start(String str);
 }

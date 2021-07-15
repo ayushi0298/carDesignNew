@@ -1,6 +1,6 @@
 package com.spring.carDesignNew.controller;
 
-import com.spring.carDesignNew.entities.Car;
+import com.spring.carDesignNew.model.CarRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
@@ -11,35 +11,18 @@ import com.spring.carDesignNew.services.CarService;
 public class Controller {
 
     @Autowired
-    public  CarService carservice;
+    public CarService carservice;
 
-    @GetMapping("/car")
-    public String startCar() {
+    /*
+    id: 1
+    */
 
-        return this.carservice.startCar();
-
-    }
-
-    @GetMapping("/stopCar")
-    public String closeCar() {
-
-        return this.carservice.closeCar();
+    @PostMapping("/create")
+    public String closeCar(@RequestBody CarRequest carRequest) {
+        return carservice.start(carRequest.getId());
 
     }
-
-    @GetMapping("/openDoor")
-    public String openDoor() {
-
-        return this.carservice.openDoor(3);
-
-    }
-
-    @GetMapping("/closeDoor")
-    public String closeDoor() {
-
-        return this.carservice.closeDoor(2);
-
-    }
-
-
 }
+
+
+
